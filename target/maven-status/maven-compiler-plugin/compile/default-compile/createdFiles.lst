@@ -1,0 +1,4 @@
+pl\lodz\project\task1\Application.class
+pl\lodz\project\task1\config\MvcConfig.class
+pl\lodz\project\task1\config\WebSecurityConfig.class
+pl\lodz\project\task1\config\ScheduledTask.class
