@@ -4,4 +4,4 @@ create table PERSON (
 );
 
 
-<!-- mvn flyway:migrate -->
+<!-- mvn flyway:migrate , conf w pom.xml-->

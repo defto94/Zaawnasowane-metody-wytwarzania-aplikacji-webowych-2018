@@ -20,6 +20,7 @@
             "context": "input"
         },
         "th:href": {},
+        "th:utext": {},
         "th:value": {
             "context": "input"
         }
