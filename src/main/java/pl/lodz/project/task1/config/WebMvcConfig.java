@@ -62,7 +62,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
          
         registry.addInterceptor(localeInterceptor).addPathPatterns("/*");
    }
-   /*
+   
    
    @Bean(name = "localeResolver")
     public LocaleResolver getLocaleResolver()  {
@@ -83,7 +83,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         messageResource.setDefaultEncoding("UTF-8");
         return messageResource;
     }
-*/
+
    
 }
 
