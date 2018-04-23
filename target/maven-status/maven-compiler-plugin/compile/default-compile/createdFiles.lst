@@ -1,8 +1,0 @@
-pl\lodz\project\task1\Application.class
-pl\lodz\project\task1\interceptor\OldLoginInterceptor.class
-pl\lodz\project\task1\interceptor\LogInterceptor.class
-pl\lodz\project\task1\controller\MainController.class
-pl\lodz\project\task1\config\WebSecurityConfig.class
-pl\lodz\project\task1\config\WebMvcConfig.class
-pl\lodz\project\task1\interceptor\AdminInterceptor.class
-pl\lodz\project\task1\config\ScheduledTask.class
