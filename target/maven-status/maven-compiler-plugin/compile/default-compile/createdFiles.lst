@@ -1,0 +1,14 @@
+pl\lodz\project\task1\interceptor\LogInterceptor.class
+pl\lodz\project\task1\controller\BookController.class
+pl\lodz\project\task1\controller\MainController.class
+pl\lodz\project\task1\mapper\UserMapper.class
+pl\lodz\project\task1\mapper\BookMapper.class
+pl\lodz\project\task1\domain\Book.class
+pl\lodz\project\task1\controller\UserController.class
+pl\lodz\project\task1\config\ScheduledTask.class
+pl\lodz\project\task1\Application.class
+pl\lodz\project\task1\interceptor\OldLoginInterceptor.class
+pl\lodz\project\task1\domain\User.class
+pl\lodz\project\task1\config\WebSecurityConfig.class
+pl\lodz\project\task1\config\WebMvcConfig.class
+pl\lodz\project\task1\interceptor\AdminInterceptor.class

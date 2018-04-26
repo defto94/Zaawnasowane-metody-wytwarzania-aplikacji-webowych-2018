@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
  *
  * @author defto
  */
-
 @Component
 public class ScheduledTask {
 
@@ -22,5 +21,10 @@ public class ScheduledTask {
     @Scheduled(fixedRate = 5000)
     public void reportCurrentTime() {
         log.info("The time is now {}", dateFormat.format(new Date()));
+    }
+
+    @Scheduled(cron = "0 * * * * ?")
+    public void scheduleTaskWithCronExpression() {
+        log.info("Cron Task :: Execution Time - {}", dateFormat.format(new Date()));
     }
 }

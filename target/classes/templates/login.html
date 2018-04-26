@@ -2,38 +2,33 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     <head>
-        <title th:utext="#{label.title}"></title>
+        <title>Logowanie</title>
     </head>
     <body>
-        <div style="text-align: right;padding:5px;margin:5px 0px;background:#ccc;">
-            <a th:href="@{/login?lang=en}">Login (English)</a>
-            &nbsp;|&nbsp;
-            <a th:href="@{/login?lang=pl}">Login (Polski)</a>
-        </div>
         <div th:if="${param.error}">
             Invalid username and password.
         </div>
         <div th:if="${param.logout}">
             <br/> You have been logged out. <br/><br/>
-            <a href="/index.jsp">Back to Home page</a> <br/><br/>
+            <a href="/home">Back to Home page</a> <br/><br/>
         </div>
         <form th:action="@{/login}" method="post">
             <table>
                 <tr>
                     <td>
-                        <strong th:utext="#{label.userName}"></strong>
+                        <strong>Login</strong>
                     </td>
                     <td><input name="username" /></td>
                 </tr>
                 <tr>
                     <td>
-                        <strong  th:utext="#{label.password}"></strong>
+                        <strong>Password</strong>
                     </td>
                     <td><input type="password" name="password" /></td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="submit" th:value="#{label.submit}" />
+                        <input type="submit" value="Log in" />
                     </td>
                 </tr>
             </table>
