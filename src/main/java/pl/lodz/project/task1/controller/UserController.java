@@ -6,6 +6,9 @@
 package pl.lodz.project.task1.controller;
 
 import java.util.List;
+import org.springframework.http.MediaType;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +19,7 @@ import pl.lodz.project.task1.mapper.UserMapper;
  *
  * @author defto
  */
+//Kontroler Angularowy WebService
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -26,8 +30,11 @@ public class UserController {
         this.usersMapper = usersMapper;
     }
     
-    @GetMapping("all")
-    public List<User> getAll() {
+   @GetMapping(path = "/all")
+    public List<User> booksList() {
         return usersMapper.findAll();
+        //return "usersList";
     }
+    
+    
 }

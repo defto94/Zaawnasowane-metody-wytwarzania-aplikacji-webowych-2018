@@ -1,0 +1,26 @@
+#add, #update {
+    margin-bottom: 50px;
+}
+
+#form{
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: #555555; 
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+}
+.button:hover{
+    cursor: pointer;
+}
+#homeButton{
+    float:left;
+    height: 14px;
+    padding-top: 2px;
+}

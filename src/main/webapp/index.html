@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     <head>
-        <title th:utext="#{label2.title}"></title>
+        <title>Main Page</title>
     </head>
     <body>
-        
-          <div style="text-align: right;padding:5px;margin:5px 0px;background:#ccc;">
-            <a th:href="@{/home?lang=en}">Login (English)</a>
-            &nbsp;|&nbsp;
-            <a th:href="@{/home?lang=pl}">Login (Polski)</a>
+        <div>
+            <br/>
+            Welcome on Main Page!
+            <p>Login to administration panel <a href="/hello">here</a></p>
+            <p>Admin Users list <a href="/books/all">here</a></p>
+            
+            
+            <p>Public list of school reading <a href="/users">here</a></p>
+            <p>Public list of magazines <a href="/users">here</a></p>
         </div>
-        
-        <h1><strong th:utext="#{label2.hello}"></strong></h1>
-
-        <p><strong th:utext="#{label2.click}"></small> <a th:href="@{/hello}"><small th:utext="#{label2.here}"></strong></a></p>
     </body>
 </html>
 

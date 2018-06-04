@@ -5,39 +5,73 @@
  */
 package pl.lodz.project.task1.domain;
 
+import java.util.List;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
  * @author defto
  */
 public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int ID;
     private String NAME;
     private String EMAIL;
 
-    public int getId() {
+    private List<Book> books;
+
+    public int getID() {
         return ID;
     }
 
-    public void setId(int id) {
-        this.ID = id;
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
-    public String getName() {
+    /**
+     * @return the NAME
+     */
+    public String getNAME() {
         return NAME;
     }
 
-    public void setName(String name) {
-        this.NAME = name;
+    /**
+     * @param NAME the NAME to set
+     */
+    public void setNAME(String NAME) {
+        this.NAME = NAME;
     }
 
-    public String getEmail() {
+    /**
+     * @return the EMAIL
+     */
+    public String getEMAIL() {
         return EMAIL;
     }
 
-    public void setEmail(String email) {
-        this.EMAIL = email;
+    /**
+     * @param EMAIL the EMAIL to set
+     */
+    public void setEMAIL(String EMAIL) {
+        this.EMAIL = EMAIL;
     }
-    
-    
-    
+
+    /**
+     * @return the books
+     */
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    /**
+     * @param books the books to set
+     */
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
+
 }

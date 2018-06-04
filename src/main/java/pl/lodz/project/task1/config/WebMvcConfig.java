@@ -21,6 +21,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.core.Ordered;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.i18n.CookieLocaleResolver;
@@ -39,6 +40,11 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         registry.addViewController("/oldLogin").setViewName("oldLogin");
         registry.addViewController("/admin").setViewName("admin/admin");
         registry.addViewController("/users").setViewName("users");
+        registry.addViewController("/booksList").setViewName("booksList");
+        registry.addViewController("/usersList").setViewName("userssList");
+        registry.addViewController("/").setViewName("home");
+        registry.addViewController("/richUI").setViewName("richUI");
+        registry.addViewController("/angul").setViewName("angul");
     }
     
     @Override

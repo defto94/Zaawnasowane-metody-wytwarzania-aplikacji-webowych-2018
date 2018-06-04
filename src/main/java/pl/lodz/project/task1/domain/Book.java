@@ -6,6 +6,9 @@
 package pl.lodz.project.task1.domain;
 
 import java.util.List;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
@@ -14,12 +17,16 @@ import javax.persistence.ManyToOne;
  * @author defto
  */
 public class Book {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int ID;
     private String TITLE;
     private String AUTHOR;
+    private int ID_USER;
     
-
-    private User userID;
+    
+    //private User ID_USER;
 
 
     public int getID() {
@@ -46,13 +53,21 @@ public class Book {
         this.AUTHOR = AUTHOR;
     }
 
-    public User getUserID() {
-        return userID;
+    /**
+     * @return the ID_USER
+     */
+    public int getID_USER() {
+        return ID_USER;
     }
 
-    public void setUserID(User userID) {
-        this.userID = userID;
+    /**
+     * @param ID_USER the ID_USER to set
+     */
+    public void setID_USER(int ID_USER) {
+        this.ID_USER = ID_USER;
     }
+    
+
 
 
     

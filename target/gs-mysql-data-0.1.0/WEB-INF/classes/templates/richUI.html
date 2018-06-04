@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href = "https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-triton/resources/theme-triton-all.css" 
+              rel = "stylesheet" />
+        <script type = "text/javascript" 
+        src = "https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"></script>
+        <script src ="customJS.js"></script>
+        <link href ="customCSS.css" rel ="stylesheet"/>
+    </head>
+
+    <body>
+        <a href="/index.jsp" class="button" id="homeButton">Home</a>
+         <form th:action="@{/logout}" method="post">
+            <input type="submit" class="button" value="Sign Out"/>
+        </form>
+        
+
+            
+    </body>
+</html>
