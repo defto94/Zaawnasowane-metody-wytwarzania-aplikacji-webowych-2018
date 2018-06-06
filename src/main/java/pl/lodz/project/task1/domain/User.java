@@ -32,23 +32,14 @@ public class User {
         this.ID = ID;
     }
 
-    /**
-     * @return the NAME
-     */
     public String getNAME() {
         return NAME;
     }
 
-    /**
-     * @param NAME the NAME to set
-     */
     public void setNAME(String NAME) {
         this.NAME = NAME;
     }
 
-    /**
-     * @return the EMAIL
-     */
     public String getEMAIL() {
         return EMAIL;
     }
@@ -60,16 +51,10 @@ public class User {
         this.EMAIL = EMAIL;
     }
 
-    /**
-     * @return the books
-     */
     public List<Book> getBooks() {
         return books;
     }
 
-    /**
-     * @param books the books to set
-     */
     public void setBooks(List<Book> books) {
         this.books = books;
     }

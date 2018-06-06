@@ -3,75 +3,83 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     <head>
         <title>Hello World!</title>
-
+        <link rel="stylesheet" type="text/css" href="style.css"/>
     </head>
     <body>
-        
-        <h2>User's Books:</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>BOOK'S ID</th>
-                    <th>TITLE</th>
-                    <th>AUTHOR</th>
-                    <th>USER'S ID</th>
-                    <th>DELETE BOOK</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="book : ${books}">
-                    <td th:text="${book.ID}"></td>
-                    <td th:text="${book.TITLE}"></td>
-                    <td th:text="${book.AUTHOR}"></td>
-                    <td th:text="${book.ID_USER}"></td>
-                    <td>  <a th:href="@{/books/deleteBook/{ID}(ID=${book.ID})}">Delete this book</a> </td>
-                </tr>
-            </tbody>
-        </table>
+        <center><h1>Admin Panel</h1></center>
+            <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="Sign Out"/>
+            </form>
+            <a th:href="@{/}"> <input type="submit" value="Main Page"/> </a>
 
-        <h2>Available users:</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>NAME</th>
-                    <th>EMAIL</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="user : ${users}">
-                    <td th:text="${user.ID}"></td>
-                    <td th:text="${user.NAME}"></td>
-                    <td th:text="${user.EMAIL}"></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <br/><br />
-        <h2>Add new book for user : </h2><br/>
-
-        <form th:action="@{/books/addBook}">
-            Choose user: 
-            <select name="ID_USER">
-                <option th:each="user : ${users}"
-                        th:value="${user.ID}"  
-                        th:utext="${user.NAME}"/>
-            </select>
-            <div><label> Title: <input type="text" name="TITLE"/> </label></div>
-            <div><label> Author: <input type="text" name="AUTHOR"/> </label></div>
             <br/>
-            <div><input type="submit" value="INSERT"/></div>
-        </form>
-        <br/><br />
 
-        <h2>Update book Title and Author : </h2>
-        <form th:action="@{/books/updateBook}">
-            <div><label> Enter Book ID: <input type="text" name="ID"/> </label></div>
-            <div><label> Change Title: <input type="text" name="TITLE"/> </label></div>
-            <div><label> Change Author: <input type="text" name="AUTHOR"/> </label></div>
-            <br/>
-            <div><input type="submit" value="Update book"/></div>
-        </form>
+            <h2>User's Books:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <td>BOOK'S ID</td>
+                        <td>TITLE</td>
+                        <td>AUTHOR</td>
+                        <td>USER'S ID</td>
+                        <td>DELETE BOOK</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="book : ${books}">
+                        <td th:text="${book.ID}"></td>
+                        <td th:text="${book.TITLE}"></td>
+                        <td th:text="${book.AUTHOR}"></td>
+                        <td th:text="${book.ID_USER}"></td>
+                        <td>  <a th:href="@{/admin/deleteBook/{ID}(ID=${book.ID})}">Delete this book</a> </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Available users:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>EMAIL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="user : ${users}">
+                        <td th:text="${user.ID}"></td>
+                        <td th:text="${user.NAME}"></td>
+                        <td th:text="${user.EMAIL}"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br/><br />
+            <h2>Add new book for user : </h2><br/>
+
+            <form th:action="@{/admin/addBook}">
+                Choose user: 
+                <select name="ID_USER">
+                    <option th:each="user : ${users}"
+                            th:value="${user.ID}"  
+                            th:utext="${user.NAME}"/>
+                </select>
+                <div><label> Title: <input type="text" name="TITLE"/> </label></div>
+                <div><label> Author: <input type="text" name="AUTHOR"/> </label></div>
+                <br/>
+                <div><input type="submit" value="INSERT"/></div>
+            </form>
+            <br/><br />
+
+            <h2>Update book Title and Author : </h2>
+            <form th:action="@{/admin/updateBook}">
+                <div><label> Enter Book ID: <input type="text" name="ID"/> </label></div>
+                <div><label> Change Title: <input type="text" name="TITLE"/> </label></div>
+                <div><label> Change Author: <input type="text" name="AUTHOR"/> </label></div>
+                <br/>
+                <div><input type="submit" value="Update book"/></div>
+            </form>
     </body>
 </html>
 

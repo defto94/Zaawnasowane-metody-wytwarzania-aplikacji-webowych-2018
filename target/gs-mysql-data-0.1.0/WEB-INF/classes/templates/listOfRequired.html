@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+    <head>
+        <title>Required Reading</title>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <script src = "script.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+    </head>
+    <body>
+        <div class ="container">
+            <div ng-app="myApp" ng-controller="Ctrl"> 
+                <center> <h2> List of required reading </h2> </center> <br/><br/>
+                <table class="table table-striped">
+                    <tr class="success">
+                        <th>Position</th>
+                        <th>Title</th> 
+                        <th>Author</th>
+                    </tr>
+                    <tr ng-repeat="req in required">
+                        <td>{{ req.id}}</td>
+                        <td>{{ req.title}}</td>
+                        <td>{{ req.author}}</td>
+                    </tr>
+                </table>
+                <br/><br/>
+                <button type="button" class="btn btn-success" onclick="location.href = '/';">Main Page</button>
+            </div>
+        </div>
+
+
+    </body>
+</html>

@@ -32,5 +32,5 @@ public interface UserMapper {
 
     @Select("select * from book where book.ID = #{id}")
     List<Book> findBooksByUser(int id);
-    
+
 }

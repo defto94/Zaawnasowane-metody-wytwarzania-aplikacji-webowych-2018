@@ -27,13 +27,9 @@ import pl.lodz.project.task1.domain.User;
 public interface BookMapper {
 
     @Select("select book.AUTHOR,book.ID,book.ID_USER,book.TITLE from book JOIN user ON book.ID_USER = user.ID;")
-//            @Results(value = {
-//                @Result(property = "user", javaType=User.class, column="ID_USER", many=@Many)
-//            })
     List<Book> findAll();
 
     @Insert("insert into book(TITLE,AUTHOR,ID_USER) values(#{TITLE},#{AUTHOR},#{ID_USER})")
-    //@SelectKey(statement = "SELECT LAST INSERT_ID()", keyProperty = "ID", before = false, resultType = Integer.class)
     void insert(Book book);
 
     @Delete("DELETE FROM book WHERE ID = #{ID}")
